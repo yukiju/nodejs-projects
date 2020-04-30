@@ -8,6 +8,19 @@ import axios from 'axios';
  * will execute logic provided in a .then() chained method. A rejected promise
  * will execute logic provided in a .catch() chained method.
 */
+
+interface Pokemon {
+    name: string;
+    id: number;
+    types: {
+        type: {
+            name: string;
+        }
+    }
+    sprites: {
+        front_default: string;
+    }
+}
 axios
     //.get(`https://pokeapi.co/api/v2/pokemon/ditto`)
     .get(`https://pokeapi.co/api/v2/pokemon/1`)
