@@ -8,7 +8,7 @@ the output JS files will have no typing information */
 
 let username = 'Abby';
 
-console.log(person.firstName);
+
 
 //let x: any = 10;
 let x: number = 10;
@@ -45,16 +45,22 @@ interface Person {
     firstName: string;
     lastName: string;
     birthdate: Date;
+    /* Function type syntax */
     sayHello: () => void;
 }
 
-let person: Person = {
+interface Employable {
+    employed: boolean;
+}
+
+let person: Person & Employable= {
     firstName: 'Abby',
     lastName: 'Adams',
     birthdate: new Date(),
     sayHello: function() {
         console.log(`Hello my name is ${this.person}.`);
-    }
+    },
+    employed: true
 };
 
 console.log(person.firstName);
