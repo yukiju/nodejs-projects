@@ -37,17 +37,24 @@ let z: number = sum(1, 2);
 /*
     Any object is considered to be of an interface type if it meets the interfaces
     type requirements
+
+    What is an interface?
+    Example: Graphical User Interface
 */
 interface Person {
     firstName: string;
     lastName: string;
     birthdate: Date;
+    sayHello: () => void;
 }
 
 let person: Person = {
     firstName: 'Abby',
     lastName: 'Adams',
-    birthdate: new Date()
+    birthdate: new Date(),
+    sayHello: function() {
+        console.log(`Hello my name is ${this.person}.`);
+    }
 };
 
 console.log(person.firstName);
